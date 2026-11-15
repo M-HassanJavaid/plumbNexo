@@ -8,6 +8,8 @@ export const siteConfig = {
   demoFromEmail: process.env.DEMO_FROM_EMAIL || "onboarding@resend.dev",
   leadWebhookUrl: process.env.LEAD_WEBHOOK_URL || "",
   instagramUrl: "https://www.instagram.com/plumbnexo/",
+  facebookUrl: "https://www.facebook.com/profile.php?id=61595690834934",
+  quoraUrl: "https://www.quora.com/profile/PlumbNexo",
   founderPortfolioUrl: "https://hassanjavaidofficial.vercel.app/",
   founder: "Hassan Javaid",
 };

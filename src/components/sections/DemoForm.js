@@ -239,6 +239,23 @@ export default function DemoForm() {
                 <span>Written scope &amp; price if you do</span>
               </div>
             </div>
+
+            {/* Direct Email Contact CTA */}
+            <div className="mt-8 pt-6 border-t border-white/10">
+              <p className="text-[14px] text-white/70 mb-3">
+                Prefer to email us directly?
+              </p>
+              <a
+                href={`mailto:${siteConfig.demoInboxEmail}`}
+                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-white/10 hover:bg-white/15 text-white font-bold text-[14px] sm:text-[15px] border border-white/15 transition-all hover:border-[#B8F36B]/50 group"
+              >
+                <svg className="w-4 h-4 text-[#B8F36B] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span>Email {siteConfig.demoInboxEmail}</span>
+                <span className="text-[#B8F36B] group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+              </a>
+            </div>
           </div>
 
           {/* Right Form Card (60% desktop, white, radius 20px, shadow) */}

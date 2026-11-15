@@ -6,6 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0C1F1E] text-white/70 py-10 lg:py-12 border-t border-white/5 relative z-10">
       <div className="max-w-[1200px] mx-auto px-5">
+        {/* Main Footer Row */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
           {/* Left: Logo & Tagline */}
           <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left shrink-0">
@@ -46,29 +47,60 @@ export default function Footer() {
             </a>
           </nav>
 
-          {/* Right: Contact & Copyright */}
-          <div className="flex flex-col items-center lg:items-end gap-1.5 text-[13px] text-white/60 text-center lg:text-right shrink-0">
-            <div className="flex items-center gap-3 whitespace-nowrap">
-              <a
-                href={`mailto:${siteConfig.demoInboxEmail}`}
-                className="hover:text-white underline underline-offset-4 decoration-white/20 hover:decoration-white transition-colors"
-              >
-                {siteConfig.demoInboxEmail}
-              </a>
-              <span className="text-white/30">·</span>
-              <a
-                href={siteConfig.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors inline-flex items-center gap-1"
-              >
-                <span>Instagram</span>
-                <span className="text-[11px]" aria-hidden="true">↗</span>
-              </a>
-            </div>
-            <div className="whitespace-nowrap text-white/50 text-[12px] sm:text-[13px]">
-              © {currentYear} PlumbNexo. All rights reserved.
-            </div>
+          {/* Right: Direct Email Contact CTA */}
+          <div className="shrink-0">
+            <a
+              href={`mailto:${siteConfig.demoInboxEmail}`}
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#B8F36B] text-[#122B2A] font-extrabold text-[13px] sm:text-[14px] shadow-sm hover:brightness-105 active:scale-[0.98] transition-all"
+            >
+              <svg className="w-4 h-4 text-[#122B2A] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>Email Us Directly</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Bottom Row: Agency Social Media & Copyright */}
+        <div className="border-t border-white/8 pt-6 mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-white/50">
+          {/* Agency Social Media */}
+          <div className="flex items-center gap-3.5 flex-wrap justify-center sm:justify-start">
+            <span className="text-white/40 font-medium">Follow PlumbNexo:</span>
+            <a
+              href={siteConfig.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-white transition-colors inline-flex items-center gap-1"
+            >
+              <span>Instagram</span>
+              <span className="text-[11px]" aria-hidden="true">↗</span>
+            </a>
+            <span className="text-white/20">·</span>
+            <a
+              href={siteConfig.facebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-white transition-colors inline-flex items-center gap-1"
+            >
+              <span>Facebook</span>
+              <span className="text-[11px]" aria-hidden="true">↗</span>
+            </a>
+            <span className="text-white/20">·</span>
+            <a
+              href={siteConfig.quoraUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-white transition-colors inline-flex items-center gap-1"
+            >
+              <span>Quora</span>
+              <span className="text-[11px]" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          {/* Copyright */}
+          <div className="whitespace-nowrap text-white/50 text-[12px] sm:text-[13px] text-center sm:text-right">
+            © {currentYear} PlumbNexo. All rights reserved.
           </div>
         </div>
       </div>

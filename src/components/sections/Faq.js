@@ -5,6 +5,7 @@ import Section from "../Section";
 import Eyebrow from "../Eyebrow";
 import { faqItems } from "@/content/faq";
 import { trackEvent } from "@/lib/analytics";
+import { siteConfig } from "@/lib/site.config";
 
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState(0); // First item open by default per README 4.8
@@ -102,7 +103,15 @@ export default function Faq() {
           className="font-bold text-[#122B2A] underline underline-offset-4 decoration-[#122B2A]/40 hover:decoration-[#B8F36B] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint rounded"
         >
           Ask it in the form below ↓
+        </a>{" "}
+        or{" "}
+        <a
+          href={`mailto:${siteConfig.demoInboxEmail}`}
+          className="font-bold text-[#122B2A] underline underline-offset-4 decoration-[#122B2A]/40 hover:decoration-[#B8F36B] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint rounded"
+        >
+          email us directly
         </a>
+        .
       </div>
     </Section>
   );

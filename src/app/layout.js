@@ -64,7 +64,12 @@ export default function RootLayout({ children }) {
         name: "United States",
       },
     ],
-    sameAs: [siteConfig.instagramUrl, siteConfig.founderPortfolioUrl],
+    sameAs: [
+      siteConfig.instagramUrl,
+      siteConfig.facebookUrl,
+      siteConfig.quoraUrl,
+      siteConfig.founderPortfolioUrl,
+    ],
   };
 
   const faqSchema = {
