@@ -65,7 +65,7 @@ export default function MobileCtaBar() {
         location="sticky_mobile"
         tabIndex={visible ? 0 : -1}
       >
-        Get my free demo page
+        Get free demo page
       </Button>
     </div>
   );

@@ -140,26 +140,13 @@ export default function DemoForm() {
       return;
     }
 
-    // 3-second minimum time-to-submit check for spam
-    const startTime = mountTimeRef.current || Date.now();
-    const timeTakenSeconds = (Date.now() - startTime) / 1000;
-    if (timeTakenSeconds < 3) {
-      // Fake delay and silent drop for spam bots
-      setIsSubmitting(true);
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setIsSuccess(true);
-      }, 1000);
-      return;
-    }
-
-    // Honeypot check
+    // Honeypot check for bots
     if (formData.company_website) {
       setIsSubmitting(true);
       setTimeout(() => {
         setIsSubmitting(false);
         setIsSuccess(true);
-      }, 1000);
+      }, 800);
       return;
     }
 
@@ -169,10 +156,7 @@ export default function DemoForm() {
       const res = await fetch("/api/demo-request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          timeToSubmit: timeTakenSeconds,
-        }),
+        body: JSON.stringify(formData),
       });
 
       if (!res.ok) {
@@ -624,7 +608,7 @@ export default function DemoForm() {
                             </>
                           ) : (
                             <>
-                              <span>Send my demo request</span>
+                              <span>Send demo request</span>
                               <span aria-hidden="true">→</span>
                             </>
                           )}

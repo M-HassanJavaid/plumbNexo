@@ -240,16 +240,16 @@ export default function CaseStudyVideo({ project }) {
               e.stopPropagation();
               startPlaying(0);
             }}
-            className="absolute z-30 flex items-center gap-3 bg-[#B8F36B] text-[#122B2A] pl-2 pr-5 py-2 rounded-full cursor-pointer transition-all duration-200 group/pill shadow-[0_0_0_6px_rgba(184,243,107,0.22)] hover:shadow-[0_0_0_10px_rgba(184,243,107,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8F36B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#122B2A]"
+            className="absolute z-30 flex items-center gap-2 sm:gap-3 bg-[#B8F36B] text-[#122B2A] pl-1.5 sm:pl-2 pr-3.5 sm:pr-5 py-1.5 sm:py-2 rounded-full cursor-pointer transition-all duration-200 group/pill shadow-[0_0_0_4px_rgba(184,243,107,0.22)] sm:shadow-[0_0_0_6px_rgba(184,243,107,0.22)] hover:shadow-[0_0_0_8px_rgba(184,243,107,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8F36B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#122B2A] -translate-x-1/2 sm:translate-x-0 max-w-[90%]"
             style={{
               left: "50%",
               top: "70%",
             }}
             aria-label={`Play ${project.title} case study video, 45 seconds`}
           >
-            <span className="w-[44px] h-[44px] rounded-full bg-[#122B2A] flex items-center justify-center shrink-0">
+            <span className="w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full bg-[#122B2A] flex items-center justify-center shrink-0">
               <svg
-                className="w-4 h-4 text-[#B8F36B] translate-x-[1px] transition-transform duration-200 group-hover/pill:translate-x-[3px]"
+                className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#B8F36B] translate-x-[1px] transition-transform duration-200 group-hover/pill:translate-x-[3px]"
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 aria-hidden="true"
@@ -257,7 +257,7 @@ export default function CaseStudyVideo({ project }) {
                 <path d="M8 5v14l11-7z" />
               </svg>
             </span>
-            <span className="font-extrabold text-[15px] sm:text-[16px] tracking-tight whitespace-nowrap">
+            <span className="font-extrabold text-[13px] sm:text-[16px] tracking-tight whitespace-nowrap">
               Watch 45-sec case study
             </span>
           </button>
@@ -277,7 +277,7 @@ export default function CaseStudyVideo({ project }) {
             </h3>
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <Button variant="primary" location="video_end">
-                Get my free demo page
+                Get free demo page
               </Button>
               <button
                 type="button"

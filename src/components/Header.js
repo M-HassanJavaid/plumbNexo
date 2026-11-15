@@ -106,7 +106,7 @@ export default function Header() {
           {/* Desktop button */}
           <div className="hidden sm:block">
             <Button variant="primary" location="header">
-              Get my free demo page
+              Get free demo page
             </Button>
           </div>
 

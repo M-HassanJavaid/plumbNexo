@@ -24,11 +24,6 @@ export async function POST(request) {
       return NextResponse.json({ success: true, message: "Processed" });
     }
 
-    // Minimum time to submit anti-spam check (3 seconds)
-    if (typeof timeToSubmit === "number" && timeToSubmit < 3) {
-      return NextResponse.json({ success: true, message: "Processed" });
-    }
-
     // Server-side validation
     if (!businessName || !serviceArea || !contactName || !contactValue) {
       return NextResponse.json(

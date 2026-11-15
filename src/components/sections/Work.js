@@ -139,7 +139,7 @@ export default function Work() {
         </div>
         <div className="shrink-0 w-full sm:w-auto">
           <Button variant="primary" location="work" className="w-full sm:w-auto">
-            Get my free demo page
+            Get free demo page
           </Button>
         </div>
       </div>

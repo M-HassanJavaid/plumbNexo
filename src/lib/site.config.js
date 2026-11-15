@@ -8,5 +8,6 @@ export const siteConfig = {
   demoFromEmail: process.env.DEMO_FROM_EMAIL || "onboarding@resend.dev",
   leadWebhookUrl: process.env.LEAD_WEBHOOK_URL || "",
   instagramUrl: "https://www.instagram.com/plumbnexo/",
+  founderPortfolioUrl: "https://hassanjavaidofficial.vercel.app/",
   founder: "Hassan Javaid",
 };

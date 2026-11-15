@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
         name: "United States",
       },
     ],
-    sameAs: [siteConfig.instagramUrl],
+    sameAs: [siteConfig.instagramUrl, siteConfig.founderPortfolioUrl],
   };
 
   const faqSchema = {

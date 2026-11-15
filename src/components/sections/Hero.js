@@ -53,7 +53,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-6">
               <div id="hero-primary-cta" className="inline-block">
                 <Button variant="primary" location="hero" className="w-full sm:w-auto">
-                  Get my free demo page
+                  Get free demo page
                 </Button>
               </div>
 

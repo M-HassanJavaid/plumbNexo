@@ -67,12 +67,12 @@ export default function Founder() {
 
             <div>
               <a
-                href="https://www.instagram.com/plumbnexo/"
+                href="https://hassanjavaidofficial.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-[15px] font-bold text-[#122B2A] underline underline-offset-4 decoration-[#122B2A]/30 hover:decoration-[#B8F36B] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint rounded"
               >
-                <span>Instagram</span>
+                <span>Portfolio</span>
                 <span className="ml-1 text-[13px]" aria-hidden="true">↗</span>
               </a>
             </div>
