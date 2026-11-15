@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "build:css": "node scripts/build-css.js",
+    "prebuild": "node scripts/build-css.js",
+    "build": "node scripts/build-css.js && next build",
+    "predev": "node scripts/build-css.js",
+    "dev": "node scripts/dev.js",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
     "next": "16.4.5",
+    "nodemailer": "^10.5.0",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
