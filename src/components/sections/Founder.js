@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Section from "../Section";
 import Eyebrow from "../Eyebrow";
+import { siteConfig } from "@/lib/site.config";
 
 export default function Founder() {
   const [imgError, setImgError] = useState(false);
@@ -65,7 +66,15 @@ export default function Founder() {
               Hassan Javaid <span className="font-medium text-[#52635F]">· Founder, PlumbNexo</span>
             </div>
 
-            <div>
+            <div className="flex items-center gap-4">
+              <a
+                href={`mailto:${siteConfig.demoInboxEmail}`}
+                className="inline-flex items-center text-[15px] font-bold text-[#122B2A] underline underline-offset-4 decoration-[#122B2A]/30 hover:decoration-[#B8F36B] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint rounded"
+              >
+                <span>Email directly</span>
+                <span className="ml-1 text-[13px]" aria-hidden="true">✉</span>
+              </a>
+              <span className="text-[#122B2A]/30">·</span>
               <a
                 href="https://hassanjavaidofficial.vercel.app/"
                 target="_blank"

@@ -296,7 +296,7 @@ export default function DemoForm() {
                 /* FORM FLOW */
                 <div>
                   {/* Progress Indicator */}
-                  <div className="mb-8">
+                  <div className="mb-6">
                     <div className="flex items-center justify-between text-[13px] font-bold text-[#52635F] mb-2 uppercase tracking-wider">
                       <span>Step {step} of 2</span>
                       <span>{step === 1 ? "About your business" : "How to reach you"}</span>
@@ -310,6 +310,21 @@ export default function DemoForm() {
                         }`}
                       />
                     </div>
+                  </div>
+
+                  {/* Direct email callout directly inside form card */}
+                  <div className="mb-6 p-3 rounded-xl bg-[#F7F8F2] border border-[#122B2A]/8 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[13px]">
+                    <span className="text-[#52635F]">Prefer to skip the form?</span>
+                    <a
+                      href={`mailto:${siteConfig.demoInboxEmail}`}
+                      className="font-bold text-[#122B2A] hover:underline inline-flex items-center gap-1.5 shrink-0"
+                    >
+                      <svg className="w-3.5 h-3.5 text-[#122B2A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      <span>Email directly: {siteConfig.demoInboxEmail}</span>
+                      <span aria-hidden="true">→</span>
+                    </a>
                   </div>
 
                   {submitError && (
@@ -470,6 +485,17 @@ export default function DemoForm() {
                           <span aria-hidden="true">→</span>
                         </button>
                       </div>
+
+                      {/* Direct Email fallback on Step 1 */}
+                      <p className="text-[13px] text-[#52635F] text-center pt-1">
+                        Or reach out directly:{" "}
+                        <a
+                          href={`mailto:${siteConfig.demoInboxEmail}`}
+                          className="font-bold text-[#122B2A] underline underline-offset-2 hover:decoration-[#B8F36B] transition-colors"
+                        >
+                          {siteConfig.demoInboxEmail}
+                        </a>
+                      </p>
                     </form>
                   )}
 
@@ -633,13 +659,20 @@ export default function DemoForm() {
                       </div>
 
                       {/* Under button privacy notice */}
-                      <p className="text-[13px] text-[#52635F] text-center pt-1">
+                      <p className="text-[13px] text-[#52635F] text-center pt-1 leading-relaxed">
                         No spam. I&apos;ll only use this to reply about your demo.{" "}
                         <a
                           href="/privacy"
                           className="underline underline-offset-2 hover:text-[#122B2A] transition-colors"
                         >
                           Privacy Policy
+                        </a>
+                        {" · "}
+                        <a
+                          href={`mailto:${siteConfig.demoInboxEmail}`}
+                          className="font-bold text-[#122B2A] underline underline-offset-2 hover:decoration-[#B8F36B] transition-colors"
+                        >
+                          Email directly instead
                         </a>
                       </p>
                     </form>

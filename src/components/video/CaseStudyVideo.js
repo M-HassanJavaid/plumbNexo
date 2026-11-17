@@ -137,7 +137,7 @@ export default function CaseStudyVideo({ project }) {
     }
   };
 
-  // Optional hover preview (desktop only): >600ms plays muted from 0:09, resets on leave
+  // Hover: autoplay with controls; video keeps playing when mouse leaves
   const handleMouseEnter = () => {
     if (hasStarted || isPlaying) return;
     if (typeof window !== "undefined") {
@@ -150,27 +150,21 @@ export default function CaseStudyVideo({ project }) {
     hoverTimerRef.current = setTimeout(() => {
       if (!hasStarted && videoRef.current) {
         setIsHoverPreviewing(true);
+        setHasStarted(true); // Treat hover-play as a full start so controls appear
         const v = videoRef.current;
         v.muted = true;
         v.defaultMuted = true;
-        if (v.readyState >= 1) {
-          v.currentTime = 9;
-        }
+        v.currentTime = 0;
         v.play().catch(() => {});
       }
     }, 600);
   };
 
   const handleMouseLeave = () => {
+    // Just clear the pending timer — if already playing, let it continue
     if (hoverTimerRef.current) {
       clearTimeout(hoverTimerRef.current);
       hoverTimerRef.current = null;
-    }
-
-    if (isHoverPreviewing && !hasStarted && videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-      setIsHoverPreviewing(false);
     }
   };
 
@@ -195,7 +189,7 @@ export default function CaseStudyVideo({ project }) {
           preload="none"
           playsInline
           muted
-          controls={hasStarted && !isEnded}
+          controls={(hasStarted || isHoverPreviewing) && !isEnded}
           onTimeUpdate={handleTimeUpdate}
           onEnded={handleEnded}
           onPlay={() => setIsPlaying(true)}
@@ -223,7 +217,7 @@ export default function CaseStudyVideo({ project }) {
         )}
 
         {/* Top-Right Duration Chip (per README 5.4) */}
-        {!hasStarted && (
+        {!hasStarted && !isHoverPreviewing && (
           <div
             className="absolute top-3.5 right-3.5 z-20 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-sm text-white text-[12px] font-bold tracking-wider pointer-events-none"
             aria-hidden="true"
@@ -232,8 +226,8 @@ export default function CaseStudyVideo({ project }) {
           </div>
         )}
 
-        {/* Mint Play Pill: anchored at top-left at left 50%, top 70% (per README 5.4) */}
-        {!hasStarted && (
+        {/* Mint Play Pill: hidden during hover preview and after play starts */}
+        {!hasStarted && !isHoverPreviewing && (
           <button
             type="button"
             onClick={(e) => {
